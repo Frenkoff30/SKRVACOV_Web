@@ -1,147 +1,128 @@
-# S.K. Rváčov — nový web
+# S.K. Rváčov — web klubu
 
-Redesign webu fotbalového klubu S.K. Rváčov (náhrada za `skrvacov.webnode.cz`).
-Statický web — čisté HTML, CSS a JavaScript. Žádný build, žádné závislosti.
+Nový web fotbalového klubu S.K. Rváčov, náhrada za `skrvacov.webnode.cz`.
+Statický web — HTML, jedno CSS, jeden JavaScript. Žádný build, žádné závislosti,
+žádná databáze.
 
 ---
 
 ## Spuštění
 
-Stačí otevřít `index.html` v prohlížeči. Pro plnou funkčnost (načítání SVG a skriptů)
-je ale lepší pustit lokální server:
+Otevřít `index.html` v prohlížeči. Nebo pustit lokální server:
 
 ```bash
 python -m http.server 5510
 ```
 
-Pak otevřít <http://localhost:5510>.
-
-### Nasazení
-Nahrát celou složku na libovolný webhosting (FTP). Není potřeba PHP ani databáze.
+**Nasazení:** nahrát celou složku na hosting přes FTP. Nic víc není potřeba.
 
 ---
 
 ## Struktura
 
 ```
-RVACOVWEB/
-├── index.html          Úvodní stránka
-├── klub.html           O klubu, historie, výkonný výbor, areál
-├── tymy.html           Soupisky – muži / dorost / žáci
-├── zapasy.html         Rozpis, výsledky, tabulka
-├── galerie.html        Fotogalerie s lightboxem
-├── kontakt.html        Kontakty, formulář, mapa, časté dotazy
-└── assets/
-    ├── css/
-    │   ├── style.css        Barvy, písma, mřížka (design tokeny)
-    │   ├── components.css   Tlačítka, karty, tabulka, hlavička, patička…
-    │   └── pages.css        Sekce jednotlivých stránek + responzivita
-    ├── js/
-    │   ├── data.js          ► VŠECHNA DATA WEBU (viz níže)
-    │   └── main.js          Logika – vykreslování, odpočet, menu, motiv
-    └── img/
-        ├── crest.svg        Velký znak klubu
-        ├── mark.svg         Malý znak (hlavička, patička)
-        ├── favicon.svg      Ikona v záložce prohlížeče
-        ├── areal.svg        Plánek areálu
-        └── mapa.svg         Orientační mapa
+index.html        Úvod
+klub.html         O klubu, historie, výbor, areál
+zapasy.html       Rozpis, výsledky, tabulka
+galerie.html      Fotogalerie
+kontakt.html      Kontakty a formulář
+
+assets/css/style.css    Všechny styly
+assets/js/data.js       ► OBSAH WEBU — tady se to upravuje
+assets/js/main.js       Logika
+assets/img/             Znak klubu (crest, mark, favicon)
 ```
 
 ---
 
-## Jak web aktualizovat
+## Jak web naplnit obsahem
 
-**Vše podstatné se mění v jediném souboru: `assets/js/data.js`.**
-Otevřete ho v poznámkovém bloku, upravte a uložte. Web se přizpůsobí sám.
+Otevřít `assets/js/data.js` v poznámkovém bloku, upravit, uložit.
+Nic jiného se měnit nemusí.
 
-| Co chcete změnit | Kde v `data.js` |
+Sekce, které jsou zatím **prázdné** a čekají na vyplnění:
+
+| Co | Proměnná v `data.js` |
 |---|---|
-| Zápasy, výsledky, termíny | `MATCHES` |
+| Zápasy a výsledky | `MATCHES` |
 | Tabulka soutěže | `TABLE` |
-| Soupisky hráčů | `SQUADS` |
 | Aktuality | `NEWS` |
-| Historie klubu | `HISTORY` |
-| Výkonný výbor | `BOARD` |
-| Sponzoři a partneři | `SPONSORS` |
-| Popisky v galerii | `GALLERY` |
-| Časté dotazy | `FAQ` |
-| Adresa, telefony, e-mail | `CLUB` + patička v HTML |
+| Fotogalerie | `GALLERY` |
+| Partneři klubu | `SPONSORS` |
 
-### Přidání zápasu
+Dokud jsou prázdné, web na jejich místě sám napíše, že se obsah doplní.
+Nic nerozbité, nic vymyšleného.
+
+**Už vyplněné** (převzato z původního webu klubu):
+
+| Co | Proměnná |
+|---|---|
+| Historie 1923–2007 | `HISTORY` |
+| Výkonný výbor | `BOARD` — pozor, stav k roku 2009, ověřit |
+| Adresa, telefony, e-mail | `CLUB` + patičky v HTML |
+
+### Příklad — přidání zápasu
+
+Do `MATCHES` vložit řádek:
+
 ```js
-{ id: 9, team: 'muzi', comp: 'I.B třída', round: 9, date: '2026-10-11T15:30',
-  home: 'S.K. Rváčov', away: 'TJ Sokol Seč', venue: 'Rváčov', status: 'upcoming' },
+{ date: '2026-09-06T17:00', home: 'S.K. Rváčov', away: 'Soupeř',
+  venue: 'Rváčov', comp: 'Okresní přebor', team: 'Muži' },
 ```
-Po odehrání změňte `status` na `'finished'` a doplňte `hg` (góly domácích)
-a `ag` (góly hostů). Odpočet na úvodní stránce se automaticky přesune
-na nejbližší další zápas.
 
-### Vložení skutečných fotek
-Galerie zatím používá generovanou grafiku. Nahrajte fotky do `assets/img/`
-a v `assets/js/main.js` ve funkci `galleryArt()` nahraďte generované SVG
-za `<img src="assets/img/nazev.jpg" alt="…">`.
+Po odehrání dopsat výsledek — `hg` jsou góly domácích, `ag` góly hostů:
 
----
+```js
+{ date: '2026-09-06T17:00', home: 'S.K. Rváčov', away: 'Soupeř',
+  venue: 'Rváčov', comp: 'Okresní přebor', team: 'Muži', hg: 2, ag: 1 },
+```
 
-## ⚠️ Co je potřeba ověřit před spuštěním
+Zápas se sám zařadí buď do rozpisu, nebo do výsledků.
 
-Reálná a ověřená data převzatá z původního webu klubu:
+### Příklad — přidání fotky
 
-- historie klubu (všechny letopočty),
-- složení výkonného výboru,
-- adresa, telefony a e-mail,
-- popis areálu.
+Fotku nahrát do `assets/img/`, pak do `GALLERY`:
 
-**Ukázková data, která je nutné nahradit skutečnými (zdroj: fotbal.cz):**
-
-- rozpis zápasů a výsledky (`MATCHES`),
-- tabulka soutěže (`TABLE`) — včetně názvu soutěže,
-- jména hráčů na soupiskách (`SQUADS`) — jsou zástupná,
-- aktuality (`NEWS`),
-- sponzoři (`SPONSORS`).
-
-Vychází z veřejných zpráv o klubu (postup do 6. ligy, dobrý vstup do sezony),
-ale nejde o ověřená čísla.
+```js
+{ src: 'assets/img/zapas-01.jpg', cap: 'Domácí zápas' },
+```
 
 ---
 
 ## Kontaktní formulář
 
-Formulář na stránce Kontakt validuje vstupy, ale **neodesílá e-maily** —
-statický web to sám neumí. Možnosti zprovoznění:
+Formulář kontroluje vyplnění, ale **neodesílá e-maily** — statický web to neumí.
+Nejjednodušší zprovoznění je Formspree nebo Web3Forms (zdarma, bez programování):
+zaregistrovat se, dostat kód a v `kontakt.html` doplnit do `<form>`:
 
-1. **Formspree / Web3Forms** (zdarma, bez programování) — stačí do
-   `<form>` doplnit `action="https://formspree.io/f/VAS_KOD"` a `method="POST"`.
-2. **PHP skript** na hostingu, pokud ho hosting podporuje.
+```html
+<form action="https://formspree.io/f/VAS_KOD" method="POST" data-contact-form>
+```
 
 Do té doby formulář zobrazí hlášku s e-mailem klubu.
 
 ---
 
-## Vlastnosti webu
+## Co web umí
 
-- Tmavý i světlý režim (přepínač v hlavičce, volba se pamatuje).
-- Plně responzivní: 375 px, 768 px, 1024 px, 1440 px.
-- Živý odpočet do nejbližšího výkopu.
-- Tabulka soutěže se zvýrazněným Rváčovem a ukazatelem formy.
-- Běžící pás s výsledky.
-- Galerie s lightboxem — ovládání šipkami, zavření klávesou Esc.
-- Přístupnost: veškerý text má kontrast alespoň 4,5 : 1, ovládání klávesnicí,
-  popisky pro čtečky, respektuje `prefers-reduced-motion`.
+- Tmavý a světlý režim, volba se pamatuje.
+- Responzivní od 375 px výš.
+- Prázdné sekce mají srozumitelnou hlášku místo prázdna.
+- Text má všude kontrast alespoň 4,5 : 1, ovládání klávesnicí funguje.
 - Bez JavaScriptu zůstane obsah čitelný.
 
 ---
 
-## Barvy značky
+## Barvy a písmo
 
-Vychází z původního kruhového znaku klubu (červený kruh s hvězdicí).
+Vychází z původního kruhového znaku klubu (červený kruh s hvězdicí),
+který je překreslený do `assets/img/crest.svg`.
 
-| Role | Tmavý režim | Světlý režim |
+| | Tmavý režim | Světlý režim |
 |---|---|---|
-| Klubová červená | `#E3242B` | `#C4131C` |
-| Červená pro text | `#FF7175` | `#C4131C` |
+| Červená | `#E3242B` | `#C4131C` |
 | Zlatá | `#F7C948` | `#7F5903` |
 | Pozadí | `#07090A` | `#FAF8F6` |
 | Text | `#F4F7F8` | `#14181B` |
 
-Písmo: **Barlow Condensed** (nadpisy) + **Barlow** (text), obojí Google Fonts.
+Písmo: **Barlow Condensed** na nadpisy, **Barlow** na text (Google Fonts).

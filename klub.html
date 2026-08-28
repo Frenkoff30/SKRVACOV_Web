@@ -3,43 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>O klubu a historie — S.K. Rváčov</title>
-<meta name="description" content="Historie S.K. Rváčov od roku 1923, výkonný výbor klubu a multifunkční areál ve Rváčově u Hlinska.">
+<title>O klubu — S.K. Rváčov</title>
+<meta name="description" content="Historie fotbalového klubu S.K. Rváčov od roku 1923, výkonný výbor a areál ve Rváčově u Hlinska.">
 <meta name="theme-color" content="#07090A">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/components.css">
-<link rel="stylesheet" href="assets/css/pages.css">
-
-<script>
-  (function () {
-    var r = document.documentElement;
-    r.classList.add('js');
-    try { var t = localStorage.getItem('skr-theme'); if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t); } catch (e) {}
-  })();
-</script>
+<script>(function(){var r=document.documentElement;r.classList.add('js');try{var t=localStorage.getItem('skr-theme');if(t==='light'||t==='dark')r.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Přeskočit na obsah</a>
 
 <header class="header">
-  <div class="container container--wide header__inner">
+  <div class="container header__inner">
     <a class="brand" href="index.html" aria-label="S.K. Rváčov — úvodní stránka">
-      <img class="brand__mark" src="assets/img/mark.svg" alt="" width="42" height="42">
-      <span class="brand__text">
-        <span class="brand__name">S.K. Rváčov</span>
-        <span class="brand__sub">Fotbal od roku 1927</span>
-      </span>
+      <img class="brand__mark" src="assets/img/mark.svg" alt="" width="40" height="40">
+      <span class="brand__name">S.K. Rváčov</span>
     </a>
     <nav class="nav" aria-label="Hlavní navigace">
       <a class="nav__link" href="index.html">Úvod</a>
       <a class="nav__link" href="klub.html" aria-current="page">Klub</a>
-      <a class="nav__link" href="tymy.html">Týmy</a>
       <a class="nav__link" href="zapasy.html">Zápasy</a>
       <a class="nav__link" href="galerie.html">Galerie</a>
       <a class="nav__link" href="kontakt.html">Kontakt</a>
@@ -49,7 +34,6 @@
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       </button>
-      <a class="btn btn--sm" href="zapasy.html">Rozpis</a>
       <button class="icon-btn burger" type="button" data-drawer-open aria-expanded="false" aria-controls="drawer" aria-label="Otevřít menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -60,7 +44,7 @@
 <div class="drawer" id="drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigace">
   <div class="drawer__top">
     <span class="brand">
-      <img class="brand__mark" src="assets/img/mark.svg" alt="" width="38" height="38">
+      <img class="brand__mark" src="assets/img/mark.svg" alt="" width="36" height="36">
       <span class="brand__name">S.K. Rváčov</span>
     </span>
     <button class="icon-btn" type="button" data-drawer-close aria-label="Zavřít menu">
@@ -70,13 +54,11 @@
   <nav class="drawer__nav" aria-label="Mobilní navigace">
     <a class="drawer__link" href="index.html">Úvod</a>
     <a class="drawer__link" href="klub.html" aria-current="page">Klub</a>
-    <a class="drawer__link" href="tymy.html">Týmy</a>
     <a class="drawer__link" href="zapasy.html">Zápasy</a>
     <a class="drawer__link" href="galerie.html">Galerie</a>
     <a class="drawer__link" href="kontakt.html">Kontakt</a>
   </nav>
   <div class="drawer__foot">
-    <a class="btn btn--block" href="zapasy.html" style="margin-bottom:var(--sp-5)">Rozpis zápasů</a>
     Rváčov 60, 539 01 Hlinsko<br>
     <a href="tel:+420606434823">606 434 823</a>
   </div>
@@ -84,180 +66,107 @@
 
 <main id="main">
 
-  <!-- ================= HLAVIČKA STRÁNKY ================= -->
   <section class="page-hero">
-    <span class="glow glow--red page-hero__glow" aria-hidden="true"></span>
-    <span class="noise" aria-hidden="true"></span>
-    <span class="page-hero__word" aria-hidden="true">1927</span>
-    <div class="container container--wide">
+    <div class="container">
       <nav class="breadcrumb" aria-label="Drobečková navigace">
         <a href="index.html">Úvod</a>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
         <span>Klub</span>
       </nav>
-      <h1 class="page-hero__title">O klubu</h1>
-      <p class="lead page-hero__lead">
-        Fotbalový oddíl S.K. Rváčov působí v obci u Hlinska od roku 1927.
-        Dnes tu hrají muži, dorost i žáci a areál slouží celé vesnici.
+      <h1>O klubu</h1>
+      <p class="lead">
+        Fotbal se ve Rváčově hraje od dvacátých let minulého století.
+        Dnes tu působí tři družstva a areál slouží celé vesnici.
       </p>
     </div>
   </section>
 
-  <!-- ================= KDO JSME ================= -->
+  <!-- KDO JSME -->
   <section class="section">
     <div class="container">
-      <div class="split">
-        <div>
-          <p class="eyebrow" data-reveal>Kdo jsme</p>
-          <h2 data-reveal data-reveal-delay="60" style="text-transform:uppercase;margin-top:var(--sp-3)">
-            Vesnický klub, který nepřestal hrát
-          </h2>
-          <div class="stack" style="margin-top:var(--sp-5)" data-reveal data-reveal-delay="120">
-            <p class="muted">
-              Počátky rváčovské kopané se dokládají už rokem 1923, o čtyři roky později vznikl
-              DSK Rváčov. Klub od té doby dvakrát zanikl i dvakrát vstal z popela — v roce 1960
-              jako TJ Vysočina, od ledna 1993 pod dnešním názvem S.K. Rváčov.
-            </p>
-            <p class="muted">
-              Zásadní zlom přišel v devadesátkách: postup do I.B třídy, první zahraniční zájezd
-              do Itálie a v roce 1994 nová travnatá plocha, kterou pokřtila Sigma Olomouc.
-              Následovaly kabiny, mládežnická družstva a v roce 2007 vlastní klubovna.
-            </p>
-            <p class="muted">
-              Dnes ve Rváčově působí tři oddíly — muži, dorost a žáci — a areál je multifunkční:
-              vedle fotbalového hřiště tu najdete antukové kurty i dětské hřiště.
-            </p>
-          </div>
-          <div class="row" style="margin-top:var(--sp-6)" data-reveal data-reveal-delay="180">
-            <a class="btn" href="tymy.html">Naše týmy</a>
-            <a class="btn btn--ghost" href="kontakt.html">Kontakt na klub</a>
-          </div>
-        </div>
-
-        <div class="split__media" style="aspect-ratio:1/1;display:grid;place-items:center;padding:var(--sp-7);background:var(--surface)" data-reveal data-reveal-delay="100">
-          <img class="crest" src="assets/img/crest.svg" alt="Znak fotbalového klubu S.K. Rváčov" width="380" height="380" style="width:min(380px,80%);height:auto">
-        </div>
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Kdo jsme</p>
+        <h2 data-reveal>Vesnický klub s dlouhou tradicí</h2>
       </div>
-
-      <div class="stats" style="margin-top:var(--sp-8)" data-reveal>
-        <div class="stat"><div class="stat__value">1923</div><div class="stat__label">První utkání</div></div>
-        <div class="stat"><div class="stat__value">1927</div><div class="stat__label">Založení klubu</div></div>
-        <div class="stat"><div class="stat__value"><span data-count="3">3</span></div><div class="stat__label">Družstva</div></div>
-        <div class="stat"><div class="stat__value"><span data-count="5">5</span></div><div class="stat__label">Členů výboru</div></div>
-        <div class="stat"><div class="stat__value"><span data-count="99">99</span><span class="suffix">let</span></div><div class="stat__label">Tradice</div></div>
+      <div class="stack" data-reveal>
+        <p class="muted">
+          První doložená utkání ve Rváčově se hrála v roce 1923, o čtyři roky později
+          vznikl DSK Rváčov. Klub od té doby dvakrát zanikl i dvakrát obnovil činnost —
+          v roce 1960 jako TJ Vysočina, od ledna 1993 pod dnešním názvem S.K. Rváčov.
+        </p>
+        <p class="muted">
+          V devadesátých letech přišel postup do I.B třídy, první zahraniční zájezd
+          do Itálie a v roce 1994 nová travnatá plocha. Následovaly nové kabiny,
+          mládežnická družstva a v roce 2007 vlastní klubovna.
+        </p>
+        <p class="muted">
+          Dnes ve Rváčově působí tři oddíly — muži, dorost a žáci. Areál je multifunkční:
+          vedle fotbalového hřiště tu jsou antukové kurty na nohejbal a volejbal
+          a dětské hřiště.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- ================= HISTORIE ================= -->
+  <!-- HISTORIE -->
   <section class="section section--alt" id="historie">
     <div class="container">
       <div class="section-head">
-        <div class="section-head__text">
-          <p class="eyebrow" data-reveal>Milníky</p>
-          <h2 data-reveal data-reveal-delay="60">Historie klubu</h2>
-          <p data-reveal data-reveal-delay="100">
-            Data převzatá z klubové kroniky. Od prvních zápasů na louce až po dnešní areál.
-          </p>
-        </div>
+        <p class="eyebrow" data-reveal>Milníky</p>
+        <h2 data-reveal>Historie klubu</h2>
+        <p data-reveal>Data z klubové kroniky.</p>
       </div>
-      <div class="grid grid-2" style="gap:clamp(2rem,5vw,4rem);align-items:start">
-        <ol class="timeline" data-render="timeline"></ol>
-        <div class="stack sticky-aside">
-          <article class="card card--accented" data-reveal>
-            <span class="badge badge--gold">1992</span>
-            <h3 style="text-transform:uppercase;margin-top:var(--sp-4)">Itálie, první výjezd za hranice</h3>
-            <p class="muted" style="font-size:var(--fs-sm);margin-top:var(--sp-3)">
-              Mezi 2. a 7. červencem 1992 vyrazil Rváčov na první zahraniční zájezd v historii klubu.
-              Odehrál tam dvě mezinárodní utkání — a obě vyhrál.
-            </p>
-            <div class="stack" style="margin-top:var(--sp-5);gap:var(--sp-2)">
-              <div class="row" style="justify-content:space-between;gap:var(--sp-3)">
-                <span style="font-family:var(--font-display);font-weight:700;text-transform:uppercase">Barcaccia – Rváčov</span>
-                <span class="num txt-win" style="font-size:1.2rem">0:2</span>
-              </div>
-              <hr class="divider">
-              <div class="row" style="justify-content:space-between;gap:var(--sp-3)">
-                <span style="font-family:var(--font-display);font-weight:700;text-transform:uppercase">Sanpolese – Rváčov</span>
-                <span class="num txt-win" style="font-size:1.2rem">1:4</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="card" data-reveal data-reveal-delay="80">
-            <span class="badge">31. 7. 1994</span>
-            <h3 style="text-transform:uppercase;margin-top:var(--sp-4)">Sigma Olomouc ve Rváčově</h3>
-            <p class="muted" style="font-size:var(--fs-sm);margin-top:var(--sp-3)">
-              Novou travnatou plochu otevřelo utkání s prvoligovou Sigmou. Prohráli jsme 1:10 —
-              ale ten jeden gól se ve vsi vypráví dodnes.
-            </p>
-          </article>
-        </div>
-      </div>
+      <ol class="timeline" data-render="history" data-reveal></ol>
     </div>
   </section>
 
-  <!-- ================= VÝKONNÝ VÝBOR ================= -->
+  <!-- VEDENÍ -->
   <section class="section" id="vedeni">
     <div class="container">
       <div class="section-head">
-        <div class="section-head__text">
-          <p class="eyebrow" data-reveal>Kdo klub vede</p>
-          <h2 data-reveal data-reveal-delay="60">Výkonný výbor</h2>
-          <p data-reveal data-reveal-delay="100">
-            Lidé, kteří se starají o chod klubu, ekonomiku, majetek i mládežnická družstva.
-          </p>
-        </div>
+        <p class="eyebrow" data-reveal>Kdo klub vede</p>
+        <h2 data-reveal>Výkonný výbor</h2>
       </div>
-      <div class="board" data-render="board"></div>
+      <ul class="board" data-render="board" data-reveal></ul>
+      <p class="dim" style="margin-top:var(--sp-4);font-size:var(--fs-xs)">
+        Složení převzato z dřívějších stránek klubu. Pokud se změnilo, dejte nám vědět.
+      </p>
     </div>
   </section>
 
-  <!-- ================= AREÁL ================= -->
+  <!-- AREÁL -->
   <section class="section section--alt" id="areal">
     <div class="container">
       <div class="section-head">
-        <div class="section-head__text">
-          <p class="eyebrow" data-reveal>Multifunkční komplex</p>
-          <h2 data-reveal data-reveal-delay="60">Areál ve Rváčově</h2>
-          <p data-reveal data-reveal-delay="100">
-            Hřiště, kurty, klubovna i dětské hřiště na jednom místě. Areál se dá pronajmout
-            na turnaje, firemní akce nebo oslavy.
-          </p>
-        </div>
-        <a class="link-arrow" href="kontakt.html" data-reveal>
-          Domluvit pronájem
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
+        <p class="eyebrow" data-reveal>Multifunkční komplex</p>
+        <h2 data-reveal>Areál ve Rváčově</h2>
+        <p data-reveal>
+          Areál je možné po domluvě pronajmout na turnaje, firemní akce nebo oslavy.
+        </p>
       </div>
-
-      <div class="map-card" data-reveal>
-        <img src="assets/img/areal.svg" alt="Plánek areálu S.K. Rváčov: travnaté fotbalové hřiště, dvě antuková hřiště, klubovna, kabiny, dětské hřiště a parkoviště." width="800" height="600">
-      </div>
-
-      <div class="facility-grid" style="margin-top:var(--sp-6)">
+      <div class="grid-4">
         <article class="facility" data-reveal>
           <div class="facility__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M12 5v14M2 9h3v6H2M22 9h-3v6h3"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M12 5v14"/></svg>
           </div>
           <h3>Travnaté hřiště</h3>
-          <p>Otevřeno 31. 7. 1994. Hlavní plocha pro všechna tři družstva.</p>
+          <p>Otevřeno 31. 7. 1994 utkáním se Sigmou Olomouc.</p>
         </article>
-        <article class="facility" data-reveal data-reveal-delay="70">
+        <article class="facility" data-reveal>
           <div class="facility__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20V9l7-5 7 5v11"/><path d="M12 4v16M5 12h14"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M12 4v16"/></svg>
           </div>
           <h3>Antukové kurty</h3>
-          <p>Nohejbal a volejbal. K dispozici i pro veřejnost po domluvě.</p>
+          <p>Nohejbal a volejbal, k dispozici i pro veřejnost.</p>
         </article>
-        <article class="facility" data-reveal data-reveal-delay="140">
+        <article class="facility" data-reveal>
           <div class="facility__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M5 21v-3a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v3"/></svg>
           </div>
           <h3>Dětské hřiště</h3>
-          <p>Pro nejmenší návštěvníky přímo u hlavní plochy.</p>
+          <p>Pro nejmenší návštěvníky areálu.</p>
         </article>
-        <article class="facility" data-reveal data-reveal-delay="210">
+        <article class="facility" data-reveal>
           <div class="facility__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/></svg>
           </div>
@@ -265,23 +174,8 @@
           <p>Kabiny z roku 1996, klubovna otevřená 1. 9. 2007.</p>
         </article>
       </div>
-    </div>
-  </section>
-
-  <!-- ================= VÝZVA ================= -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-band" data-reveal>
-        <p class="eyebrow eyebrow--plain" style="color:rgba(255,255,255,.85);justify-content:center">Podpořte klub</p>
-        <h2 style="margin-top:var(--sp-3)">Staňte se partnerem</h2>
-        <p>
-          Reklama na mantinelu, na dresech nebo tady na webu. Každá koruna jde na dresy,
-          míče a údržbu areálu — a vaše značka bude vidět při každém domácím zápase.
-        </p>
-        <div class="row">
-          <a class="btn btn--gold" href="kontakt.html">Nezávazná poptávka</a>
-          <a class="btn btn--ghost" href="mailto:meloun.ales@tiscali.cz">Napsat e-mail</a>
-        </div>
+      <div class="row" style="margin-top:var(--sp-6)" data-reveal>
+        <a class="btn btn--ghost" href="kontakt.html">Domluvit pronájem</a>
       </div>
     </div>
   </section>
@@ -289,36 +183,22 @@
 </main>
 
 <footer class="footer">
-  <span class="footer__word" aria-hidden="true">Rváčov</span>
-  <div class="container container--wide">
+  <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
         <span class="brand">
-          <img class="brand__mark" src="assets/img/mark.svg" alt="" width="42" height="42" loading="lazy">
-          <span class="brand__text">
-            <span class="brand__name">S.K. Rváčov</span>
-            <span class="brand__sub">Fotbal od roku 1927</span>
-          </span>
+          <img class="brand__mark" src="assets/img/mark.svg" alt="" width="40" height="40" loading="lazy">
+          <span class="brand__name">S.K. Rváčov</span>
         </span>
-        <p>Fotbalový oddíl z Rváčova u Hlinska. Tři družstva, multifunkční areál a skoro sto let nepřetržité tradice.</p>
+        <p>Fotbalový oddíl z Rváčova u Hlinska. Muži, dorost a žáci. Založeno v roce 1927.</p>
       </div>
-      <nav aria-label="Patička – stránky">
+      <nav aria-label="Patička — stránky">
         <h2 class="footer__title">Stránky</h2>
         <ul class="footer__list">
           <li><a href="klub.html">O klubu</a></li>
-          <li><a href="klub.html#historie">Historie</a></li>
-          <li><a href="tymy.html">Týmy a soupisky</a></li>
-          <li><a href="zapasy.html">Zápasy a tabulka</a></li>
-          <li><a href="galerie.html">Fotogalerie</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Patička – týmy">
-        <h2 class="footer__title">Týmy</h2>
-        <ul class="footer__list">
-          <li><a href="tymy.html#muzi">Muži</a></li>
-          <li><a href="tymy.html#dorost">Dorost</a></li>
-          <li><a href="tymy.html#zaci">Žáci</a></li>
-          <li><a href="kontakt.html">Nábor mládeže</a></li>
+          <li><a href="zapasy.html">Zápasy</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </nav>
       <div>
@@ -332,8 +212,8 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <span>&copy; <span data-year>2026</span> S.K. Rváčov. Všechna práva vyhrazena.</span>
-      <span>Rváčov u Hlinska &middot; Pardubický kraj</span>
+      <span>&copy; <span data-year>2026</span> S.K. Rváčov</span>
+      <span>Rváčov u Hlinska</span>
     </div>
   </div>
 </footer>
