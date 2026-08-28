@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-labelledby="arealTitle arealDesc">
+  <title id="arealTitle">Plánek areálu S.K. Rváčov</title>
+  <desc id="arealDesc">Orientační schéma sportovního areálu: travnaté fotbalové hřiště, dvě antuková hřiště, klubovna, kabiny, dětské hřiště a parkoviště. Rozmístění je ilustrační.</desc>
+
+  <defs>
+    <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2E9152"/>
+      <stop offset="1" stop-color="#1E7440"/>
+    </linearGradient>
+    <pattern id="mow" width="54" height="10" patternUnits="userSpaceOnUse">
+      <rect width="27" height="10" fill="#FFFFFF" fill-opacity="0.07"/>
+    </pattern>
+    <linearGradient id="clay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D08050"/>
+      <stop offset="1" stop-color="#B4653B"/>
+    </linearGradient>
+    <style>
+      .lbl { font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif; font-weight:700;
+             font-size:17px; letter-spacing:1.4px; fill:#14181B; }
+      .sub { font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif; font-weight:500;
+             font-size:13px; letter-spacing:1.2px; fill:#5C686F; }
+      .num { font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif; font-weight:800;
+             font-size:13px; letter-spacing:1.4px; fill:#C4131C; }
+      .line { stroke:#FFFFFF; stroke-opacity:.85; fill:none; stroke-width:2.4; }
+    </style>
+  </defs>
+
+  <rect width="800" height="600" fill="#FAF8F6"/>
+
+  <!-- jemná mřížka -->
+  <g stroke="#14181B" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 80h800M0 160h800M0 240h800M0 320h800M0 400h800M0 480h800M0 560h800"/>
+    <path d="M80 0v600M160 0v600M240 0v600M320 0v600M400 0v600M480 0v600M560 0v600M640 0v600M720 0v600"/>
+  </g>
+
+  <!-- travnaté hřiště -->
+  <g>
+    <rect x="46" y="74" width="436" height="278" rx="6" fill="url(#grass)"/>
+    <rect x="46" y="74" width="436" height="278" rx="6" fill="url(#mow)"/>
+    <rect x="46" y="74" width="436" height="278" rx="6" fill="none" stroke="#155C31" stroke-width="3"/>
+    <g class="line">
+      <rect x="66" y="94" width="396" height="238"/>
+      <path d="M264 94v238"/>
+      <circle cx="264" cy="213" r="46"/>
+      <rect x="66" y="148" width="58" height="130"/>
+      <rect x="66" y="180" width="22" height="66"/>
+      <rect x="404" y="148" width="58" height="130"/>
+      <rect x="436" y="180" width="26" height="66"/>
+    </g>
+    <circle cx="264" cy="213" r="4" fill="#fff"/>
+    <rect x="56" y="188" width="10" height="50" fill="#FFFFFF" fill-opacity=".8"/>
+    <rect x="462" y="188" width="10" height="50" fill="#FFFFFF" fill-opacity=".8"/>
+  </g>
+  <text class="num" x="46" y="60">01</text>
+  <text class="lbl" x="74" y="60">Travnaté hřiště</text>
+  <text class="sub" x="222" y="60">hlavní hrací plocha</text>
+
+  <!-- antuka -->
+  <g>
+    <rect x="524" y="74" width="230" height="128" rx="5" fill="url(#clay)"/>
+    <g class="line" stroke-width="2">
+      <rect x="540" y="88" width="198" height="100"/>
+    </g>
+    <path d="M639 82v112" stroke="#FFFFFF" stroke-width="2.4" stroke-dasharray="5 5"/>
+
+    <rect x="524" y="222" width="230" height="128" rx="5" fill="url(#clay)"/>
+    <g class="line" stroke-width="2">
+      <rect x="540" y="236" width="198" height="100"/>
+    </g>
+    <path d="M639 230v112" stroke="#FFFFFF" stroke-width="2.4" stroke-dasharray="5 5"/>
+  </g>
+  <text class="num" x="524" y="60">02</text>
+  <text class="lbl" x="552" y="60">Antuka</text>
+  <text class="sub" x="628" y="60">nohejbal a volejbal</text>
+
+  <!-- budovy -->
+  <g>
+    <rect x="46" y="410" width="212" height="122" rx="6" fill="#FFFFFF" stroke="#C2B6A9" stroke-width="2"/>
+    <path d="M46 452h212" stroke="#C2B6A9" stroke-width="2"/>
+    <g fill="#E0A81C" fill-opacity=".45">
+      <rect x="70" y="472" width="26" height="34" rx="2"/>
+      <rect x="112" y="472" width="26" height="34" rx="2"/>
+      <rect x="154" y="472" width="26" height="34" rx="2"/>
+    </g>
+    <rect x="200" y="472" width="34" height="42" rx="2" fill="#C4131C" fill-opacity=".8"/>
+
+    <rect x="278" y="410" width="150" height="122" rx="6" fill="#FFFFFF" stroke="#C2B6A9" stroke-width="2"/>
+    <path d="M278 452h150" stroke="#C2B6A9" stroke-width="2"/>
+    <g fill="#E0A81C" fill-opacity=".35">
+      <rect x="300" y="472" width="22" height="30" rx="2"/>
+      <rect x="338" y="472" width="22" height="30" rx="2"/>
+      <rect x="376" y="472" width="22" height="30" rx="2"/>
+    </g>
+  </g>
+  <text class="num" x="46" y="396">03</text>
+  <text class="lbl" x="74" y="396">Klubovna</text>
+  <text class="num" x="278" y="396">04</text>
+  <text class="lbl" x="306" y="396">Kabiny</text>
+
+  <!-- dětské hřiště -->
+  <g>
+    <rect x="448" y="410" width="150" height="122" rx="6" fill="#F3EEE4" stroke="#C2B6A9" stroke-width="2"/>
+    <circle cx="486" cy="452" r="15" fill="none" stroke="#0B7A35" stroke-opacity=".7" stroke-width="3"/>
+    <path d="M470 500h44M492 500l-8-24M492 500l8-24" stroke="#0B7A35" stroke-opacity=".6" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M534 500v-44h34v18l-34 26" stroke="#C4131C" stroke-opacity=".6" stroke-width="3" fill="none" stroke-linejoin="round"/>
+    <circle cx="560" cy="440" r="8" fill="#E0A81C" fill-opacity=".6"/>
+  </g>
+  <text class="num" x="448" y="396">05</text>
+  <text class="lbl" x="476" y="396">Dětské hřiště</text>
+
+  <!-- parkoviště -->
+  <g>
+    <rect x="618" y="410" width="136" height="122" rx="6" fill="#EFEAE3" stroke="#C2B6A9" stroke-width="2"/>
+    <g stroke="#A2968A" stroke-width="2" stroke-dasharray="4 6">
+      <path d="M652 424v94M686 424v94M720 424v94"/>
+    </g>
+    <path d="M618 470h136" stroke="#A2968A" stroke-width="1.6"/>
+  </g>
+  <text class="num" x="618" y="396">06</text>
+  <text class="lbl" x="646" y="396">Parkoviště</text>
+
+  <!-- cesta a vstup -->
+  <g>
+    <path d="M46 366h708" stroke="#C2B6A9" stroke-width="2" stroke-dasharray="8 6"/>
+    <circle cx="686" cy="366" r="7" fill="#C4131C"/>
+    <circle cx="686" cy="366" r="13" fill="none" stroke="#C4131C" stroke-opacity=".4" stroke-width="2"/>
+  </g>
+  <text class="sub" x="704" y="371">VSTUP</text>
+
+  <!-- severka -->
+  <g transform="translate(756 552)">
+    <circle r="22" fill="#FFFFFF" stroke="#C2B6A9" stroke-width="1.5"/>
+    <path d="M0 -14 L5 4 L0 0 L-5 4 Z" fill="#C4131C"/>
+    <text class="sub" x="0" y="16" text-anchor="middle" font-size="11">S</text>
+  </g>
+
+  <text class="sub" x="46" y="566">ORIENTAČNÍ SCHÉMA AREÁLU, ROZMÍSTĚNÍ JE ILUSTRAČNÍ</text>
+</svg>

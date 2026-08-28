@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html lang="cs" data-theme="dark">
+<html lang="cs">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>O klubu — S.K. Rváčov</title>
-<meta name="description" content="Historie fotbalového klubu S.K. Rváčov od roku 1923, výkonný výbor a areál ve Rváčově u Hlinska.">
-<meta name="theme-color" content="#07090A">
+<title>O klubu, S.K. Rváčov</title>
+<meta name="description" content="Historie S.K. Rváčov od roku 1923, výkonný výbor a sportovní areál v Rváčově u Hlinska.">
+<meta name="theme-color" content="#FAF8F6">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-<script>(function(){var r=document.documentElement;r.classList.add('js');try{var t=localStorage.getItem('skr-theme');if(t==='light'||t==='dark')r.setAttribute('data-theme',t);}catch(e){}})();</script>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Přeskočit na obsah</a>
 
 <header class="header">
   <div class="container header__inner">
-    <a class="brand" href="index.html" aria-label="S.K. Rváčov — úvodní stránka">
-      <img class="brand__mark" src="assets/img/mark.svg" alt="" width="40" height="40">
-      <span class="brand__name">S.K. Rváčov</span>
+    <a class="brand" href="index.html" aria-label="S.K. Rváčov, úvodní stránka">
+      <img class="brand__mark" src="assets/img/mark.svg" alt="" width="42" height="42">
+      <span class="brand__text">
+        <span class="brand__name">S.K. Rváčov</span>
+        <span class="brand__sub">Fotbalový klub od roku 1927</span>
+      </span>
     </a>
     <nav class="nav" aria-label="Hlavní navigace">
       <a class="nav__link" href="index.html">Úvod</a>
@@ -31,10 +34,7 @@
       <a class="nav__link" href="kontakt.html">Kontakt</a>
     </nav>
     <div class="header__actions">
-      <button class="icon-btn" type="button" data-theme-toggle aria-label="Přepnout na světlý režim">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-      </button>
+      <a class="btn btn--sm" href="zapasy.html">Zápasy</a>
       <button class="icon-btn burger" type="button" data-drawer-open aria-expanded="false" aria-controls="drawer" aria-label="Otevřít menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -45,7 +45,7 @@
 <div class="drawer" id="drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigace">
   <div class="drawer__top">
     <span class="brand">
-      <img class="brand__mark" src="assets/img/mark.svg" alt="" width="36" height="36">
+      <img class="brand__mark" src="assets/img/mark.svg" alt="" width="38" height="38">
       <span class="brand__name">S.K. Rváčov</span>
     </span>
     <button class="icon-btn" type="button" data-drawer-close aria-label="Zavřít menu">
@@ -76,75 +76,117 @@
         <span>Klub</span>
       </nav>
       <h1>O klubu</h1>
-      <p class="lead">
-        Fotbal se ve Rváčově hraje od dvacátých let minulého století.
-        Dnes tu působí tři družstva a areál slouží celé vesnici.
-      </p>
+      <p class="lead">S.K. Rváčov je fotbalový klub z Rváčova u Hlinska. Působí zde tři družstva a vlastní sportovní areál.</p>
     </div>
   </section>
 
-  <!-- KDO JSME -->
+<div class="sep sep--to-base" aria-hidden="true"><svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path class="sep__fill" d="M0,44 C240,92 460,6 720,32 C980,58 1200,88 1440,42 L1440,90 L0,90 Z"/><path class="sep__edge" d="M0,44 C240,92 460,6 720,32 C980,58 1200,88 1440,42"/></svg></div>
+
   <section class="section">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow" data-reveal>Kdo jsme</p>
-        <h2 data-reveal>Vesnický klub s dlouhou tradicí</h2>
+        <p class="eyebrow" data-reveal>Představení</p>
+        <h2 data-reveal>Kdo jsme</h2>
       </div>
-      <div class="stack" data-reveal>
-        <p class="muted">
-          První doložená utkání ve Rváčově se hrála v roce 1923, o čtyři roky později
-          vznikl DSK Rváčov. Klub od té doby dvakrát zanikl i dvakrát obnovil činnost —
-          v roce 1960 jako TJ Vysočina, od ledna 1993 pod dnešním názvem S.K. Rváčov.
-        </p>
-        <p class="muted">
-          V devadesátých letech přišel postup do I.B třídy, první zahraniční zájezd
-          do Itálie a v roce 1994 nová travnatá plocha. Následovaly nové kabiny,
-          mládežnická družstva a v roce 2007 vlastní klubovna.
-        </p>
-        <p class="muted">
-          Dnes ve Rváčově působí tři oddíly — muži, dorost a žáci. Areál je multifunkční:
-          vedle fotbalového hřiště tu jsou antukové kurty na nohejbal a volejbal
-          a dětské hřiště.
-        </p>
+      <div class="grid-2" style="align-items:start">
+        <div class="stack" data-reveal>
+          <p class="muted">
+            První doložená utkání v Rváčově se hrála v roce 1923, o čtyři roky později vznikl
+            DSK Rváčov. Klub od té doby dvakrát přerušil a dvakrát obnovil činnost, v roce 1960
+            jako TJ Vysočina a od ledna 1993 pod dnešním názvem S.K. Rváčov.
+          </p>
+          <p class="muted">
+            Zásadní období přišlo v devadesátých letech. Klub postoupil do I.B třídy, vyrazil
+            na první zahraniční zájezd a v roce 1994 otevřel novou travnatou plochu. Následovaly
+            nové kabiny, obě mládežnická družstva a v roce 2007 vlastní klubovna.
+          </p>
+          <p class="muted">
+            Dnes v klubu působí tři oddíly, tedy muži, dorost a žáci. Sportovní areál je
+            multifunkční, vedle fotbalového hřiště zahrnuje antukové kurty na nohejbal
+            a volejbal i dětské hřiště.
+          </p>
+        </div>
+        <div class="card" style="text-align:center" data-reveal>
+          <img src="assets/img/crest.svg" alt="Znak S.K. Rváčov" width="200" height="200" style="width:min(200px,68%);margin:0 auto var(--sp-4)" loading="lazy">
+          <h3 style="text-transform:uppercase">Klubový znak</h3>
+          <p class="muted" style="font-size:var(--fs-sm);margin-top:var(--sp-3)">
+            Kruhový emblém s hvězdicí, letopočtem založení a názvem klubu.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- HISTORIE -->
+<div class="pitchband" aria-hidden="true">
+  <svg viewBox="0 0 1440 90" preserveAspectRatio="xMidYMid slice">
+    <rect width="1440" height="90" fill="#0B7A35"/>
+    <g fill="#FFFFFF" fill-opacity=".055"><rect x="0" width="72" height="90"/><rect x="144" width="72" height="90"/><rect x="288" width="72" height="90"/><rect x="432" width="72" height="90"/><rect x="576" width="72" height="90"/><rect x="720" width="72" height="90"/><rect x="864" width="72" height="90"/><rect x="1008" width="72" height="90"/><rect x="1152" width="72" height="90"/><rect x="1296" width="72" height="90"/></g>
+    <g stroke="#FFFFFF" stroke-opacity=".42" stroke-width="2" fill="none">
+      <path d="M0 45h1440"/>
+      <circle cx="720" cy="45" r="29"/>
+      <rect x="-40" y="12" width="120" height="66"/>
+      <rect x="1360" y="12" width="120" height="66"/>
+    </g>
+    <circle cx="720" cy="45" r="4" fill="#FFFFFF" fill-opacity=".65"/>
+  </svg>
+</div>
+
   <section class="section section--alt" id="historie">
     <div class="container">
-      <div class="section-head">
-        <p class="eyebrow" data-reveal>Milníky</p>
-        <h2 data-reveal>Historie klubu</h2>
-        <p data-reveal>Data z klubové kroniky.</p>
+      <div class="section-head section-head--row">
+        <div>
+          <p class="eyebrow" data-reveal>Časová osa</p>
+          <h2 data-reveal>Historie klubu</h2>
+          <p data-reveal>Milníky od prvních utkání v roce 1923 až po otevření klubovny.</p>
+        </div>
+        <span class="timeline-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          Osu posunete tažením do strany
+        </span>
       </div>
-      <ol class="timeline" data-render="history" data-reveal></ol>
+      <ol class="timeline" data-render="history"></ol>
     </div>
   </section>
 
-  <!-- VEDENÍ -->
+<div class="sep sep--to-base" aria-hidden="true"><svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path class="sep__fill" d="M0,90 C380,18 1060,18 1440,90 Z"/><path class="sep__edge" d="M0,90 C380,18 1060,18 1440,90"/></svg></div>
+
   <section class="section" id="vedeni">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow" data-reveal>Kdo klub vede</p>
+        <p class="eyebrow" data-reveal>Vedení</p>
         <h2 data-reveal>Výkonný výbor</h2>
+        <p data-reveal>Lidé odpovědní za chod klubu, ekonomiku, majetek a mládežnická družstva.</p>
       </div>
-      <ul class="board" data-render="board" data-reveal></ul>
-      <p class="dim" style="margin-top:var(--sp-4);font-size:var(--fs-xs)">
-        Složení převzato z dřívějších stránek klubu. Pokud se změnilo, dejte nám vědět.
-      </p>
+      <ul class="board" data-render="board"></ul>
     </div>
   </section>
 
-  <!-- AREÁL -->
+<div class="pitchband" aria-hidden="true">
+  <svg viewBox="0 0 1440 90" preserveAspectRatio="xMidYMid slice">
+    <rect width="1440" height="90" fill="#0B7A35"/>
+    <g fill="#FFFFFF" fill-opacity=".055"><rect x="0" width="72" height="90"/><rect x="144" width="72" height="90"/><rect x="288" width="72" height="90"/><rect x="432" width="72" height="90"/><rect x="576" width="72" height="90"/><rect x="720" width="72" height="90"/><rect x="864" width="72" height="90"/><rect x="1008" width="72" height="90"/><rect x="1152" width="72" height="90"/><rect x="1296" width="72" height="90"/></g>
+    <g stroke="#FFFFFF" stroke-opacity=".42" stroke-width="2" fill="none">
+      <path d="M0 45h1440"/>
+      <circle cx="720" cy="45" r="29"/>
+      <rect x="-40" y="12" width="120" height="66"/>
+      <rect x="1360" y="12" width="120" height="66"/>
+    </g>
+    <circle cx="720" cy="45" r="4" fill="#FFFFFF" fill-opacity=".65"/>
+  </svg>
+</div>
+
   <section class="section section--alt" id="areal">
     <div class="container">
-      <div class="section-head">
-        <p class="eyebrow" data-reveal>Multifunkční komplex</p>
-        <h2 data-reveal>Areál ve Rváčově</h2>
-        <p data-reveal>
-          Areál je možné po domluvě pronajmout na turnaje, firemní akce nebo oslavy.
-        </p>
+      <div class="section-head section-head--row">
+        <div>
+          <p class="eyebrow" data-reveal>Zázemí</p>
+          <h2 data-reveal>Sportovní areál</h2>
+          <p data-reveal>Areál je možné po domluvě pronajmout na turnaje, firemní akce nebo soukromé události.</p>
+        </div>
+        <a class="link-arrow" href="kontakt.html" data-reveal>Domluvit pronájem <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden;margin-bottom:var(--sp-5)" data-reveal>
+        <img src="assets/img/areal.svg" alt="Plánek areálu S.K. Rváčov: travnaté hřiště, antukové kurty, klubovna, kabiny, dětské hřiště a parkoviště." width="800" height="600">
       </div>
       <div class="grid-4">
         <article class="facility" data-reveal>
@@ -152,32 +194,45 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M12 5v14"/></svg>
           </div>
           <h3>Travnaté hřiště</h3>
-          <p>Otevřeno 31. 7. 1994 utkáním se Sigmou Olomouc.</p>
+          <p>Hlavní hrací plocha uvedená do provozu v roce 1994.</p>
         </article>
         <article class="facility" data-reveal>
           <div class="facility__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M12 4v16"/></svg>
           </div>
           <h3>Antukové kurty</h3>
-          <p>Nohejbal a volejbal, k dispozici i pro veřejnost.</p>
+          <p>Hřiště na nohejbal a volejbal, po domluvě i pro veřejnost.</p>
         </article>
         <article class="facility" data-reveal>
           <div class="facility__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M5 21v-3a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v3"/></svg>
           </div>
           <h3>Dětské hřiště</h3>
-          <p>Pro nejmenší návštěvníky areálu.</p>
+          <p>Zázemí pro nejmenší návštěvníky během utkání i mimo ně.</p>
         </article>
         <article class="facility" data-reveal>
           <div class="facility__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/></svg>
           </div>
           <h3>Klubovna a kabiny</h3>
-          <p>Kabiny z roku 1996, klubovna otevřená 1. 9. 2007.</p>
+          <p>Kabiny z roku 1996, klubovna otevřená v roce 2007.</p>
         </article>
       </div>
-      <div class="row" style="margin-top:var(--sp-6)" data-reveal>
-        <a class="btn btn--ghost" href="kontakt.html">Domluvit pronájem</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta" data-reveal>
+        <h2>Staňte se partnerem klubu</h2>
+        <p>
+          Nabízíme reklamu na mantinelech, na dresech i na tomto webu. Podpora směřuje
+          na vybavení, údržbu areálu a mládežnická družstva.
+        </p>
+        <div class="row">
+          <a class="btn btn--white" href="kontakt.html">Nezávazná poptávka</a>
+          <a class="btn btn--ghost" href="mailto:meloun.ales@tiscali.cz">Napsat e-mail</a>
+        </div>
       </div>
     </div>
   </section>
@@ -189,19 +244,30 @@
     <div class="footer__top">
       <div class="footer__brand">
         <span class="brand">
-          <img class="brand__mark" src="assets/img/mark.svg" alt="" width="40" height="40" loading="lazy">
-          <span class="brand__name">S.K. Rváčov</span>
+          <img class="brand__mark" src="assets/img/mark.svg" alt="" width="42" height="42" loading="lazy">
+          <span class="brand__text">
+            <span class="brand__name">S.K. Rváčov</span>
+            <span class="brand__sub">Fotbalový klub od roku 1927</span>
+          </span>
         </span>
-        <p>Fotbalový oddíl z Rváčova u Hlinska. Muži, dorost a žáci. Založeno v roce 1927.</p>
+        <p>Fotbalový klub z Rváčova u Hlinska. Tři družstva, vlastní sportovní areál a nepřetržitá tradice od roku 1927.</p>
       </div>
-      <nav aria-label="Patička — stránky">
-        <h2 class="footer__title">Stránky</h2>
+      <nav aria-label="Patička, stránky">
+        <h2 class="footer__title">Klub</h2>
         <ul class="footer__list">
           <li><a href="klub.html">O klubu</a></li>
-          <li><a href="tymy.html">Týmy</a></li>
-          <li><a href="zapasy.html">Zápasy</a></li>
-          <li><a href="galerie.html">Galerie</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="klub.html#historie">Historie</a></li>
+          <li><a href="klub.html#vedeni">Výkonný výbor</a></li>
+          <li><a href="klub.html#areal">Areál</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Patička, sport">
+        <h2 class="footer__title">Sport</h2>
+        <ul class="footer__list">
+          <li><a href="tymy.html#muzi">Muži</a></li>
+          <li><a href="tymy.html#dorost">Dorost</a></li>
+          <li><a href="tymy.html#zaci">Žáci</a></li>
+          <li><a href="zapasy.html">Zápasy a tabulka</a></li>
         </ul>
       </nav>
       <div>
@@ -216,7 +282,7 @@
     </div>
     <div class="footer__bottom">
       <span>&copy; <span data-year>2026</span> S.K. Rváčov</span>
-      <span>Rváčov u Hlinska</span>
+      <span>Rváčov u Hlinska, Pardubický kraj</span>
     </div>
   </div>
 </footer>

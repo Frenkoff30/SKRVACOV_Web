@@ -1,7 +1,7 @@
-# S.K. Rváčov — web klubu
+# S.K. Rváčov, web klubu
 
 Nový web fotbalového klubu S.K. Rváčov, náhrada za `skrvacov.webnode.cz`.
-Statický web — HTML, jedno CSS, jeden JavaScript. Žádný build, žádné závislosti,
+Statický web: HTML, jedno CSS, jeden JavaScript. Žádný build, žádné závislosti,
 žádná databáze.
 
 ---
@@ -14,7 +14,7 @@ Otevřít `index.html` v prohlížeči. Nebo pustit lokální server:
 python -m http.server 5510
 ```
 
-**Nasazení:** nahrát celou složku na hosting přes FTP. Nic víc není potřeba.
+**Nasazení:** nahrát celou složku na hosting přes FTP.
 
 ---
 
@@ -24,95 +24,91 @@ python -m http.server 5510
 index.html        Úvod
 klub.html         O klubu, historie, výbor, areál
 tymy.html         Soupisky mužů, dorostu a žáků
-zapasy.html       Rozpis, výsledky, tabulka
+zapasy.html       Nejbližší zápas, rozpis, výsledky, tabulka
 galerie.html      Fotogalerie
-kontakt.html      Kontakty a formulář
+kontakt.html      Kontakty, formulář, mapa, časté dotazy
 
-assets/css/style.css    Všechny styly
-assets/js/data.js       ► OBSAH WEBU — tady se to upravuje
-assets/js/main.js       Logika
-assets/img/             Znak klubu (crest, mark, favicon)
+assets/css/style.css   Všechny styly
+assets/js/data.js      OBSAH WEBU, tady se to upravuje
+assets/js/main.js      Logika
+assets/img/            Znak klubu, plánek areálu, mapa
 ```
 
 ---
 
-## Jak web naplnit obsahem
+## Kde se web upravuje
 
-Otevřít `assets/js/data.js` v poznámkovém bloku, upravit, uložit.
-Nic jiného se měnit nemusí.
-
-### Přepínač ukázkových dat
-
-Úplně nahoře v `data.js` je:
-
-```js
-const DEMO = true;
-```
-
-Dokud je `true`, zobrazí se u soupisek a u tabulky žlutá poznámka
-**„Ukázková data"**, aby si nikdo nespletl nástřel se skutečností.
-Až budou data reálná, přepněte na `false` a poznámky zmizí.
-
-### Ukázkově vyplněné (nahradit skutečnými)
+Všechen obsah je v `assets/js/data.js`. Otevřít v poznámkovém bloku,
+upravit, uložit. Nic jiného se měnit nemusí.
 
 | Co | Proměnná |
-|---|---|
-| Tabulka soutěže | `TABLE` — soupeři jsou „Soupeř A" až „Soupeř G" |
-| Soupisky | `SQUADS` — hráči jsou „Jméno Příjmení" |
-
-### Zatím prázdné, čekají na vyplnění:
-
-| Co | Proměnná v `data.js` |
 |---|---|
 | Zápasy a výsledky | `MATCHES` |
+| Tabulka soutěže | `TABLE` |
+| Soupisky | `SQUADS` |
 | Aktuality | `NEWS` |
 | Fotogalerie | `GALLERY` |
-| Partneři klubu | `SPONSORS` |
+| Partneři | `SPONSORS` |
+| Historie | `HISTORY` |
+| Výkonný výbor | `BOARD` |
+| Časté dotazy | `FAQ` |
 
-Dokud jsou prázdné, web na jejich místě sám napíše, že se obsah doplní.
-Nic nerozbité, nic vymyšleného.
-
-**Už vyplněné** (převzato z původního webu klubu):
-
-| Co | Proměnná |
-|---|---|
-| Historie 1923–2007 | `HISTORY` |
-| Výkonný výbor | `BOARD` — pozor, stav k roku 2009, ověřit |
-| Adresa, telefony, e-mail | `CLUB` + patičky v HTML |
-
-### Příklad — přidání zápasu
-
-Do `MATCHES` vložit řádek:
+### Přidání zápasu
 
 ```js
-{ date: '2026-09-06T17:00', home: 'S.K. Rváčov', away: 'Soupeř',
-  venue: 'Rváčov', comp: 'Okresní přebor', team: 'Muži' },
+{ date: '2026-10-11T15:30', home: 'S.K. Rváčov', away: 'TJ Sokol Seč',
+  venue: 'Rváčov', comp: 'I.B třída', team: 'Muži' },
 ```
 
-Po odehrání dopsat výsledek — `hg` jsou góly domácích, `ag` góly hostů:
+Po odehrání dopsat výsledek, `hg` jsou góly domácích, `ag` góly hostů:
 
 ```js
-{ date: '2026-09-06T17:00', home: 'S.K. Rváčov', away: 'Soupeř',
-  venue: 'Rváčov', comp: 'Okresní přebor', team: 'Muži', hg: 2, ag: 1 },
+{ date: '2026-10-11T15:30', home: 'S.K. Rváčov', away: 'TJ Sokol Seč',
+  venue: 'Rváčov', comp: 'I.B třída', team: 'Muži', hg: 2, ag: 1 },
 ```
 
-Zápas se sám zařadí buď do rozpisu, nebo do výsledků.
+Zápas se sám přesune z rozpisu do výsledků a obarví se podle výsledku.
+Odpočet vždy ukazuje nejbližší nadcházející zápas mužů.
 
-### Příklad — přidání fotky
+### Přidání fotky
 
-Fotku nahrát do `assets/img/`, pak do `GALLERY`:
+Fotku nahrát do `assets/img/`, pak přidat do `GALLERY`:
 
 ```js
-{ src: 'assets/img/zapas-01.jpg', cap: 'Domácí zápas' },
+{ cap: 'Popisek fotky', src: 'assets/img/zapas-01.jpg', tag: 'zapasy' },
 ```
+
+Bez `src` se vykreslí grafická dlaždice. Hodnota `tag` určuje filtr v galerii,
+možnosti jsou `zapasy`, `tym`, `mladez` a `areal`.
+
+---
+
+## Co je nutné ověřit před spuštěním
+
+**Ukázková data**, vymyšlená pro účely návrhu. Před spuštěním nahradit
+skutečnými údaji z fotbal.cz:
+
+- zápasy a výsledky
+- tabulka soutěže včetně názvu soutěže
+- jména hráčů na soupiskách
+- aktuality
+- sponzoři
+- plánek areálu, rozmístění objektů i rozměry jsou odhad
+- mapa okolí, jde o ilustrační schéma, ne o navigační mapu
+
+**Ověřená data** převzatá z původního webu klubu:
+
+- historie klubu, všechny letopočty
+- složení výkonného výboru, pozor, stav k roku 2009
+- adresa, telefony a e-mail
 
 ---
 
 ## Kontaktní formulář
 
-Formulář kontroluje vyplnění, ale **neodesílá e-maily** — statický web to neumí.
-Nejjednodušší zprovoznění je Formspree nebo Web3Forms (zdarma, bez programování):
-zaregistrovat se, dostat kód a v `kontakt.html` doplnit do `<form>`:
+Formulář kontroluje vyplnění, ale **neodesílá e-maily**, statický web to neumí.
+Nejjednodušší zprovoznění je Formspree nebo Web3Forms, zdarma a bez programování.
+Stačí se zaregistrovat a v `kontakt.html` doplnit do `<form>`:
 
 ```html
 <form action="https://formspree.io/f/VAS_KOD" method="POST" data-contact-form>
@@ -122,26 +118,31 @@ Do té doby formulář zobrazí hlášku s e-mailem klubu.
 
 ---
 
-## Co web umí
+## Vzhled
 
-- Tmavý a světlý režim, volba se pamatuje.
-- Responzivní od 375 px výš.
-- Prázdné sekce mají srozumitelnou hlášku místo prázdna.
-- Text má všude kontrast alespoň 4,5 : 1, ovládání klávesnicí funguje.
-- Bez JavaScriptu zůstane obsah čitelný.
-
----
-
-## Barvy a písmo
-
-Vychází z původního kruhového znaku klubu (červený kruh s hvězdicí),
+Web má jeden světlý vzhled. Barvy vychází z původního kruhového znaku klubu,
 který je překreslený do `assets/img/crest.svg`.
 
-| | Tmavý režim | Světlý režim |
-|---|---|---|
-| Červená | `#E3242B` | `#C4131C` |
-| Zlatá | `#F7C948` | `#7F5903` |
-| Pozadí | `#07090A` | `#FAF8F6` |
-| Text | `#F4F7F8` | `#14181B` |
+| | |
+|---|---|
+| Klubová červená | `#C4131C` |
+| Trávníková zelená | `#0B7A35` |
+| Zlatá | `#7F5903` |
+| Pozadí | `#FAF8F6` a `#F1EDE9` |
+| Text | `#14181B` |
 
-Písmo: **Barlow Condensed** na nadpisy, **Barlow** na text (Google Fonts).
+Písmo: **Barlow Condensed** na nadpisy, **Barlow** na text, obojí Google Fonts.
+
+### Fotbalové prvky
+
+- V pozadí úvodní části a hlaviček podstránek jsou jemné pruhy posekaného trávníku.
+- Sekce oddělují pásy trávníku se středovým kruhem a postranními vápny.
+- Doplňkově se střídají vlnky a oblouky.
+- Historie klubu je vodorovná časová osa, posouvá se tažením do strany.
+
+Veškerá grafika je v CSS a SVG, web nepoužívá žádné rastrové obrázky.
+
+### Přístupnost
+
+Veškerý text má kontrast alespoň 4,5 : 1, ovládání klávesnicí funguje,
+web respektuje `prefers-reduced-motion` a bez JavaScriptu zůstane obsah čitelný.
