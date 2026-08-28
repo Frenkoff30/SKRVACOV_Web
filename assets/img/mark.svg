@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="Znak S.K. Rváčov">
+  <defs>
+    <linearGradient id="mRing" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E3242B"/>
+      <stop offset="1" stop-color="#8E0A11"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="98" fill="url(#mRing)"/>
+  <circle cx="100" cy="100" r="98" fill="none" stroke="#F2C14E" stroke-width="4"/>
+  <circle cx="100" cy="100" r="80" fill="#FCF7EE"/>
+  <g>
+    <path fill="#C99406" d="M91.35 73.37 L100 26 L100 100 Z"/>
+    <path fill="#F2C14E" d="M100 100 L100 26 L108.65 73.37 Z"/>
+    <path fill="#C99406" d="M108.65 73.37 L143.5 40.13 L100 100 Z"/>
+    <path fill="#F2C14E" d="M100 100 L143.5 40.13 L122.65 83.54 Z"/>
+    <path fill="#C99406" d="M122.65 83.54 L170.38 77.13 L100 100 Z"/>
+    <path fill="#F2C14E" d="M100 100 L170.38 77.13 L128 100 Z"/>
+    <path fill="#C99406" d="M128 100 L170.38 122.87 L100 100 Z"/>
+    <path fill="#F2C14E" d="M100 100 L170.38 122.87 L122.65 116.46 Z"/>
+    <path fill="#C99406" d="M122.65 116.46 L143.5 159.87 L100 100 Z"/>
+    <path fill="#F2C14E" d="M100 100 L143.5 159.87 L108.65 126.63 Z"/>
+    <path fill="#C99406" d="M108.65 126.63 L100 174 L100 100 Z"/>
+    <path fill="#F2C14E" d="M100 100 L100 174 L91.35 126.63 Z"/>
+    <path fill="#C99406" d="M91.35 126.63 L56.5 159.87 L100 100 Z"/>
+    <path fill="#F2C14E" d="M100 100 L56.5 159.87 L77.35 116.46 Z"/>
+    <path fill="#C99406" d="M77.35 116.46 L29.62 122.87 L100 100 Z"/>
+    <path fill="#F2C14E" d="M100 100 L29.62 122.87 L72 100 Z"/>
+    <path fill="#C99406" d="M72 100 L29.62 77.13 L100 100 Z"/>
+    <path fill="#F2C14E" d="M100 100 L29.62 77.13 L77.35 83.54 Z"/>
+    <path fill="#C99406" d="M77.35 83.54 L56.5 40.13 L100 100 Z"/>
+    <path fill="#F2C14E" d="M100 100 L56.5 40.13 L91.35 73.37 Z"/>
+  </g>
+  <g>
+    <path fill="#8E0A11" d="M94.44 82.88 L100 50 L100 100 Z"/>
+    <path fill="#E3242B" d="M100 100 L100 50 L105.56 82.88 Z"/>
+    <path fill="#8E0A11" d="M105.56 82.88 L129.39 59.55 L100 100 Z"/>
+    <path fill="#E3242B" d="M100 100 L129.39 59.55 L114.56 89.42 Z"/>
+    <path fill="#8E0A11" d="M114.56 89.42 L147.55 84.55 L100 100 Z"/>
+    <path fill="#E3242B" d="M100 100 L147.55 84.55 L118 100 Z"/>
+    <path fill="#8E0A11" d="M118 100 L147.55 115.45 L100 100 Z"/>
+    <path fill="#E3242B" d="M100 100 L147.55 115.45 L114.56 110.58 Z"/>
+    <path fill="#8E0A11" d="M114.56 110.58 L129.39 140.45 L100 100 Z"/>
+    <path fill="#E3242B" d="M100 100 L129.39 140.45 L105.56 117.12 Z"/>
+    <path fill="#8E0A11" d="M105.56 117.12 L100 150 L100 100 Z"/>
+    <path fill="#E3242B" d="M100 100 L100 150 L94.44 117.12 Z"/>
+    <path fill="#8E0A11" d="M94.44 117.12 L70.61 140.45 L100 100 Z"/>
+    <path fill="#E3242B" d="M100 100 L70.61 140.45 L85.44 110.58 Z"/>
+    <path fill="#8E0A11" d="M85.44 110.58 L52.45 115.45 L100 100 Z"/>
+    <path fill="#E3242B" d="M100 100 L52.45 115.45 L82 100 Z"/>
+    <path fill="#8E0A11" d="M82 100 L52.45 84.55 L100 100 Z"/>
+    <path fill="#E3242B" d="M100 100 L52.45 84.55 L85.44 89.42 Z"/>
+    <path fill="#8E0A11" d="M85.44 89.42 L70.61 59.55 L100 100 Z"/>
+    <path fill="#E3242B" d="M100 100 L70.61 59.55 L94.44 82.88 Z"/>
+  </g>
+  <circle cx="100" cy="100" r="17" fill="#FCF7EE" stroke="#C99406" stroke-width="2"/>
+</svg>

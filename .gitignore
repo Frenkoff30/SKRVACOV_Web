@@ -1,0 +1,11 @@
+# Nástroje pro vývoj, nejsou součástí webu
+skills/
+
+# Python
+__pycache__/
+*.pyc
+
+# Systémové soubory
+Thumbs.db
+desktop.ini
+.DS_Store
