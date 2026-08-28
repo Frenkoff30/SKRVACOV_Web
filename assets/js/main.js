@@ -287,6 +287,39 @@
       `<li class="sponsor">${esc(s.name)}</li>`).join('')}</ul>`;
   }
 
+  /* ---------- Soupisky ---------------------------------------------------- */
+  function renderSquads(host) {
+    const squads = (typeof SQUADS === 'undefined') ? [] : SQUADS;
+    if (!has(squads)) {
+      empty(host, 'Soupisky zatím nejsou vyplněné.');
+      return;
+    }
+    host.innerHTML = squads.map((t) => `
+      <section class="squad" id="${esc(t.id)}">
+        <header class="squad__head">
+          <h2 class="squad__name">${esc(t.name)}</h2>
+          <p class="squad__note">${esc(t.note || '')}</p>
+        </header>
+        <ul class="roster">
+          ${t.players.map((p) => `
+            <li class="roster__row">
+              <span class="roster__num">${esc(p.n)}</span>
+              <span class="roster__name">${esc(p.name)}</span>
+              <span class="roster__post">${esc(p.post)}</span>
+            </li>`).join('')}
+        </ul>
+      </section>`).join('');
+  }
+
+  /* ---------- Upozornění na ukázková data --------------------------------
+     Poznámka je napsaná přímo v HTML, aby byla vidět i bez JS.
+     Jakmile se v data.js přepne DEMO na false, zmizí. */
+  function initDemoNotice() {
+    const demo = (typeof DEMO === 'undefined') ? false : DEMO;
+    if (demo) return;
+    $$('[data-demo]').forEach((el) => el.remove());
+  }
+
   /* ---------- Kontaktní formulář ----------------------------------------- */
   function initForm() {
     const form = $('[data-contact-form]');
@@ -352,7 +385,8 @@
     'history':    renderHistory,
     'board':      renderBoard,
     'gallery':    renderGallery,
-    'sponsors':   renderSponsors
+    'sponsors':   renderSponsors,
+    'squads':     renderSquads
   };
 
   function boot() {
@@ -362,6 +396,7 @@
       const fn = RENDERERS[host.getAttribute('data-render')];
       if (fn) { try { fn(host); } catch (err) { console.error('Chyba vykreslení:', err); } }
     });
+    initDemoNotice();
     initForm();
     initToTop();
     initYear();

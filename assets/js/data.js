@@ -9,6 +9,15 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
+   UKÁZKOVÁ DATA
+
+   true  = soupisky a tabulka níže jsou jen NÁSTŘEL, aby bylo vidět,
+           jak to bude vypadat. Web u nich zobrazí upozornění.
+   false = data jsou skutečná, upozornění zmizí.
+   -------------------------------------------------------------------------- */
+const DEMO = true;
+
+/* --------------------------------------------------------------------------
    ZÁKLADNÍ ÚDAJE O KLUBU
    -------------------------------------------------------------------------- */
 const CLUB = {
@@ -47,7 +56,70 @@ const MATCHES = [];
    m = zápasy, w = výhry, d = remízy, l = prohry,
    gf = vstřelené góly, ga = obdržené góly, pts = body
    -------------------------------------------------------------------------- */
-const TABLE = [];
+const TABLE = [
+  { club: 'Soupeř A',      m: 5, w: 4, d: 1, l: 0, gf: 14, ga: 4,  pts: 13 },
+  { club: 'S.K. Rváčov',   m: 5, w: 4, d: 0, l: 1, gf: 12, ga: 6,  pts: 12 },
+  { club: 'Soupeř B',      m: 5, w: 3, d: 1, l: 1, gf: 10, ga: 7,  pts: 10 },
+  { club: 'Soupeř C',      m: 5, w: 2, d: 2, l: 1, gf: 9,  ga: 8,  pts: 8 },
+  { club: 'Soupeř D',      m: 5, w: 2, d: 1, l: 2, gf: 8,  ga: 9,  pts: 7 },
+  { club: 'Soupeř E',      m: 5, w: 1, d: 2, l: 2, gf: 6,  ga: 9,  pts: 5 },
+  { club: 'Soupeř F',      m: 5, w: 1, d: 0, l: 4, gf: 5,  ga: 12, pts: 3 },
+  { club: 'Soupeř G',      m: 5, w: 0, d: 1, l: 4, gf: 3,  ga: 12, pts: 1 }
+];
+
+/* --------------------------------------------------------------------------
+   SOUPISKY
+
+   Jména níže jsou ZÁSTUPNÁ — nahraďte skutečnými hráči.
+   post: 'Brankář' | 'Obránce' | 'Záložník' | 'Útočník'
+   -------------------------------------------------------------------------- */
+const SQUADS = [
+  {
+    id: 'muzi',
+    name: 'Muži',
+    note: 'A-tým klubu',
+    players: [
+      { n: 1,  name: 'Jméno Příjmení', post: 'Brankář'  },
+      { n: 2,  name: 'Jméno Příjmení', post: 'Obránce'  },
+      { n: 3,  name: 'Jméno Příjmení', post: 'Obránce'  },
+      { n: 4,  name: 'Jméno Příjmení', post: 'Obránce'  },
+      { n: 5,  name: 'Jméno Příjmení', post: 'Obránce'  },
+      { n: 6,  name: 'Jméno Příjmení', post: 'Záložník' },
+      { n: 7,  name: 'Jméno Příjmení', post: 'Záložník' },
+      { n: 8,  name: 'Jméno Příjmení', post: 'Záložník' },
+      { n: 9,  name: 'Jméno Příjmení', post: 'Útočník'  },
+      { n: 10, name: 'Jméno Příjmení', post: 'Záložník' },
+      { n: 11, name: 'Jméno Příjmení', post: 'Útočník'  }
+    ]
+  },
+  {
+    id: 'dorost',
+    name: 'Dorost',
+    note: 'Družstvo od roku 2001',
+    players: [
+      { n: 1,  name: 'Jméno Příjmení', post: 'Brankář'  },
+      { n: 3,  name: 'Jméno Příjmení', post: 'Obránce'  },
+      { n: 5,  name: 'Jméno Příjmení', post: 'Obránce'  },
+      { n: 6,  name: 'Jméno Příjmení', post: 'Záložník' },
+      { n: 8,  name: 'Jméno Příjmení', post: 'Záložník' },
+      { n: 9,  name: 'Jméno Příjmení', post: 'Útočník'  },
+      { n: 11, name: 'Jméno Příjmení', post: 'Útočník'  }
+    ]
+  },
+  {
+    id: 'zaci',
+    name: 'Žáci',
+    note: 'Družstvo od roku 2000',
+    players: [
+      { n: 1,  name: 'Jméno Příjmení', post: 'Brankář'  },
+      { n: 4,  name: 'Jméno Příjmení', post: 'Obránce'  },
+      { n: 6,  name: 'Jméno Příjmení', post: 'Záložník' },
+      { n: 7,  name: 'Jméno Příjmení', post: 'Záložník' },
+      { n: 9,  name: 'Jméno Příjmení', post: 'Útočník'  },
+      { n: 10, name: 'Jméno Příjmení', post: 'Útočník'  }
+    ]
+  }
+];
 
 /* --------------------------------------------------------------------------
    AKTUALITY

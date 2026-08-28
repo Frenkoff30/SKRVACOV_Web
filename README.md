@@ -23,6 +23,7 @@ python -m http.server 5510
 ```
 index.html        Úvod
 klub.html         O klubu, historie, výbor, areál
+tymy.html         Soupisky mužů, dorostu a žáků
 zapasy.html       Rozpis, výsledky, tabulka
 galerie.html      Fotogalerie
 kontakt.html      Kontakty a formulář
@@ -40,12 +41,30 @@ assets/img/             Znak klubu (crest, mark, favicon)
 Otevřít `assets/js/data.js` v poznámkovém bloku, upravit, uložit.
 Nic jiného se měnit nemusí.
 
-Sekce, které jsou zatím **prázdné** a čekají na vyplnění:
+### Přepínač ukázkových dat
+
+Úplně nahoře v `data.js` je:
+
+```js
+const DEMO = true;
+```
+
+Dokud je `true`, zobrazí se u soupisek a u tabulky žlutá poznámka
+**„Ukázková data"**, aby si nikdo nespletl nástřel se skutečností.
+Až budou data reálná, přepněte na `false` a poznámky zmizí.
+
+### Ukázkově vyplněné (nahradit skutečnými)
+
+| Co | Proměnná |
+|---|---|
+| Tabulka soutěže | `TABLE` — soupeři jsou „Soupeř A" až „Soupeř G" |
+| Soupisky | `SQUADS` — hráči jsou „Jméno Příjmení" |
+
+### Zatím prázdné, čekají na vyplnění:
 
 | Co | Proměnná v `data.js` |
 |---|---|
 | Zápasy a výsledky | `MATCHES` |
-| Tabulka soutěže | `TABLE` |
 | Aktuality | `NEWS` |
 | Fotogalerie | `GALLERY` |
 | Partneři klubu | `SPONSORS` |
